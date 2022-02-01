@@ -1,5 +1,7 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Destino {
@@ -43,6 +45,7 @@ public class Destino {
 	}
 
 	public int getFuso() {
+				
 		return fuso;
 	}
 
@@ -57,7 +60,7 @@ public class Destino {
 	public void setLeia(Scanner leia) {
 		this.leia = leia;
 	}
-
+	
 	public void imprimirInfo() {
 		System.out.println("********** 44 Turismo **********");
 		System.out.println("Olá, somos a empresa 44 Turismo e seja bem-vinde ao nosso site!");
@@ -66,8 +69,33 @@ public class Destino {
 
 	
 	 public void horario() {
-		 DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm");
-	     System.out.println(dtf2.format(LocalDateTime.now())); 
+		 int op;
+		 int f = 0;
+		 
+		 	System.out.println("Selecione o destino desejado");
+			System.out.println("[1] – Londres");
+			System.out.println("[2] – Paris");
+			System.out.println("[3] – Los Angeles");
+			System.out.println("[4] – Vancouver");
+			System.out.println("[5] – Genebra");
+			op= leia.nextInt();
+			
+			switch (op) {
+			
+			case 1:
+				f = 3;
+				break;
+			}
+		 
+		 GregorianCalendar gc = new GregorianCalendar();
+	        gc.setTime(new Date());
+	        
+	        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	        System.out.println("Horário local: " + sdf.format(gc.getTime()));
+	        
+	        gc.add(Calendar.HOUR,f);
+	        System.out.println("Horário no destino: " + sdf.format(gc.getTime()));	
+		 
 	 }
 	 
 
