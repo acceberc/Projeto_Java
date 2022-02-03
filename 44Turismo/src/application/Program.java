@@ -70,10 +70,10 @@ public class Program {
 						+ " Parque Farroupilha, Cidade Baixa, Rio Guaíba e mais 21 destinos.",
 				8.37f, 73, 110, 99, 0);
 
-		Destinos destino[];
+		Destinos destino[] = null;
 		
 		String a1 = "\n\n\n* * * * * * * * * * * * * * *";
-		String a2 = "* * * * * 44 TURISMO! * * * * *";
+		String a2 = "* * * * * 44 TURISMO! * * * * ";
 		String a3 = "* * * * * * * * * * * * * * *";
 
 		ArrayList<String> cabecalho = new ArrayList<>();
@@ -98,17 +98,20 @@ public class Program {
 		for (String list : cabecalho)
 			System.out.println(list);
 
-		System.out.println("Olá, seja bem-vinde!");
+		System.out.println("\n\n\nOlá, seja bem-vinde!");
 		System.out.println("Qual é o seu nome?");
 		nome = sc.next();
 		
-		
-		System.out.println("\nOlá, " + nome + ", para prosseguirmos, selecione o destino desejado:");
-		
 		do {
+			System.out.println("\n*********NOSSOS DESTINOS**********");
+			for (CidadesNacionais list : listacidade)
+				System.out.println(list.getNome());
+			for (CidadesInternacionais list : listacity)
+				System.out.println(list.getNome());
+			System.out.println("**********************************");
+		System.out.println("\nOlá, " + nome + ", para prosseguirmos, selecione o destino desejado:");
 		System.out.println("\n[1]: Internacional");
 		System.out.println("[2]: Nacional");
-		System.out.println("[3]: Listar todas as cidades");
 		System.out.println("[0]: Finalizar aplicação");
 		op = sc.nextInt();
 
@@ -126,14 +129,7 @@ public class Program {
 
 		case 2:
 			destino = cidade;
-			break;
-			
-		case 3:
-			for (CidadesNacionais list : listacidade)
-				System.out.println(list.getNome());
-			for (CidadesInternacionais list : listacity)
-				System.out.println(list.getNome());		
-			break;
+			break;	
 
 		default:
 			System.out.println("Opção Inválida");
@@ -220,7 +216,7 @@ public class Program {
 				break;
 
 			case 6:
-				//main(args);
+				main(args);
 				break;
 
 			default:
@@ -260,7 +256,7 @@ public class Program {
 				break;
 
 			case 6:
-				//main(args);
+				main(args);
 				break;
 
 			default:
