@@ -103,7 +103,7 @@ public class Program {
 		nome = sc.next();
 		
 		do {
-			System.out.println("\n*********NOSSOS DESTINOS**********");
+			System.out.println("\n********* NOSSOS DESTINOS **********");
 			for (CidadesNacionais list : listacidade)
 				System.out.println(list.getNome());
 			for (CidadesInternacionais list : listacity)
