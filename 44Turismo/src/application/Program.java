@@ -70,7 +70,7 @@ public class Program {
 						+ " Parque Farroupilha, Cidade Baixa, Rio Guaíba e mais 21 destinos.",
 				8.37f, 73, 110, 99, 0);
 
-		Destinos destino[] = null;
+		Destinos destino[];
 		
 		String a1 = "\n\n\n* * * * * * * * * * * * * * *";
 		String a2 = "* * * * * 44 TURISMO! * * * * *";
@@ -101,8 +101,11 @@ public class Program {
 		System.out.println("Olá, seja bem-vinde!");
 		System.out.println("Qual é o seu nome?");
 		nome = sc.next();
-
+		
+		
 		System.out.println("\nOlá, " + nome + ", para prosseguirmos, selecione o destino desejado:");
+		
+		do {
 		System.out.println("\n[1]: Internacional");
 		System.out.println("[2]: Nacional");
 		System.out.println("[3]: Listar todas as cidades");
@@ -129,14 +132,14 @@ public class Program {
 			for (CidadesNacionais list : listacidade)
 				System.out.println(list.getNome());
 			for (CidadesInternacionais list : listacity)
-				System.out.println(list.getNome());
-			main(args);
+				System.out.println(list.getNome());		
 			break;
 
 		default:
 			System.out.println("Opção Inválida");
 
 		}
+		}while(op < 0 && op > 2);
 
 		System.out.println("[1]: " + destino[1].getNome());
 		System.out.println("[2]: " + destino[2].getNome());
@@ -217,7 +220,7 @@ public class Program {
 				break;
 
 			case 6:
-				main(args);
+				//main(args);
 				break;
 
 			default:
@@ -257,7 +260,7 @@ public class Program {
 				break;
 
 			case 6:
-				main(args);
+				//main(args);
 				break;
 
 			default:
