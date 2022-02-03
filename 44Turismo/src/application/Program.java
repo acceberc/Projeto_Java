@@ -17,7 +17,7 @@ public class Program {
 		int op2;
 		String nome;
 
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner (System.in);
 
 		CidadesInternacionais[] city = new CidadesInternacionais[6];
 		/*
