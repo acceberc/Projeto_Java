@@ -1,0 +1,83 @@
+package entities;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class CidadesNacionais extends Destinos {
+
+	public CidadesNacionais(String nome, String pontosTuristicos, int fuso, float bilhete, float alimentacao,
+			float hospedagem, float aluguel) {
+
+		super(nome, pontosTuristicos, fuso, bilhete,alimentacao, hospedagem, aluguel);
+		// TODO Auto-generated constructor stub
+	}
+	public CidadesNacionais(String nome, String pontosTuristicos, float bilhete, float alimentacao,
+			float hospedagem, float aluguel) {
+		
+		super(nome, pontosTuristicos, pontosTuristicos, pontosTuristicos, 0, 0, 0, 0, bilhete, alimentacao, hospedagem, hospedagem, aluguel);
+	}
+
+	public void cambio(float cambio) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void imprimirFuso(int fuso) {
+		// TODO Auto-generated method stub
+		if (fuso < 0) {
+			System.out.println("Diferença fuso horária -" + fuso + ":00");
+		} else {
+			System.out.println("Diferença fuso horária " + fuso + ":00");
+		}
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTime(new Date());
+
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+		gc.add(Calendar.HOUR, fuso);
+		System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+	}
+
+	@Override
+	public void geNome() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void imprimirCustos() {
+		// TODO Auto-generated method stub
+		if (fuso < 0) {
+			System.out.println("Diferença fuso horária -" + fuso + ":00 GMT");
+		} else {
+			System.out.println("Diferença fuso horária +" + fuso + ":00 GMT");
+		}
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTime(new Date());
+
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+		gc.add(Calendar.HOUR, fuso);
+		System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+		
+	}
+	@Override
+	public void pontosTuristicos() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void imprimirClima() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void imprimirFuso() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

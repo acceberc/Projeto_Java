@@ -1,0 +1,120 @@
+package entities;
+
+public abstract class Destinos {
+	
+	abstract public void geNome();
+	abstract public void imprimirCustos();
+	abstract public void pontosTuristicos(); 
+		
+		
+	
+	//abstract protected void selecionarOpcao();
+	
+	
+	protected String nome;
+	protected String moeda;
+	protected String pontosTuristicos;
+	protected int fuso;
+	protected int temperaturaMin;
+	protected int temperaturaMax;
+	protected int periodo;
+	protected float cambio;
+	protected float custos;
+	protected float alimentacao;
+	protected float hospedagem;
+	protected boolean visto;
+	
+	
+	
+	public Destinos(String nome, String estacao, String moeda, String pontosTuristicos,
+			int fuso, int temperaturaMin, int temperaturaMax, int periodo, float cambio,
+			float custos, float alimentacao, float hospedagem, boolean visto) {
+		
+		this.nome = nome;
+		this.moeda = moeda;
+		this.pontosTuristicos = pontosTuristicos;
+		this.fuso = fuso;
+		this.temperaturaMin = temperaturaMin;
+		this.temperaturaMax = temperaturaMax;
+		this.periodo = periodo;
+		this.cambio = cambio;
+		this.custos = custos;
+		this.alimentacao = alimentacao;
+		this.hospedagem = hospedagem;
+		this.visto = visto;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getMoeda() {
+		return moeda;
+	}
+	public void setMoeda(String moeda) {
+		this.moeda = moeda;
+	}
+	public String getPontosTuristicos() {
+		return pontosTuristicos;
+	}
+	public void setPontosTuristicos(String pontosTuristicos) {
+		this.pontosTuristicos = pontosTuristicos;
+	}
+	public  int getFuso() {
+		return fuso;
+	}
+	public void setFuso(int fuso) {
+		this.fuso = fuso;
+	}
+	public float getCambio() {
+		return cambio;
+	}
+	public void setCambio(float cambio) {
+		this.cambio = cambio;
+	}
+	public float getCustos() {
+		return custos;
+	}
+	public void setCustos(float custos) {
+		this.custos = custos;
+	}
+	public float getAlimentacao() {
+		return alimentacao;
+	}
+	public void setAlimentacao(float alimentacao) {
+		this.alimentacao = alimentacao;
+	}
+	public float getHospedagem() {
+		return hospedagem;
+	}
+	public void setHospedagem(float hospedagem) {
+		this.hospedagem = hospedagem;
+	}
+	public boolean isVisto() {
+		return visto;
+	}
+	public void setVisto(boolean visto) {
+		this.visto = visto;
+	}
+	public int getTemperaturaMin() {
+		return temperaturaMin;
+	}
+	public void setTemperaturaMin(int temperaturaMin) {
+		this.temperaturaMin = temperaturaMin;
+	}
+	public int getTemperaturaMax() {
+		return temperaturaMax;
+	}
+	public void setTemperaturaMax(int temperaturaMax) {
+		this.temperaturaMax = temperaturaMax;
+	}
+	public int getPeriodo() {
+		return periodo;
+	}
+	public void setPeriodo(int periodo) {
+		this.periodo = periodo;
+	}
+	
+}

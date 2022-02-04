@@ -1,0 +1,434 @@
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
+public class CidadeI extends Destinos {
+	Scanner leia = new Scanner(System.in);
+	private float cambio = (float) 0;
+
+	public CidadeI(int opCidade, int cidade, float cambio) {
+		super(opCidade, cidade);
+		this.cambio = cambio;
+	}
+
+	public float getCambio() {
+		return cambio;
+	}
+
+	public void setCambio(float cambio) {
+		this.cambio = cambio;
+	}
+
+	public void imprimirClima() {
+
+		System.out.println("\nSelecione o período desejado");
+		System.out.println("\n[1] – Janeiro a Março");
+		System.out.println("\n[2] – Abril a Junho");
+		System.out.println("\n[3] – Julho a Setembro");
+		System.out.println("\n[4] – Outubro a Novembro");
+		int periodo1 = leia.nextInt();
+
+		// Londres
+		if (cidade == 1)
+			if (periodo1 == 1) {
+				System.out.println("A média de temperatura em Londres nessa epoca do ano é de 8ºC à 2ºC");
+			} else if (periodo1 == 2) {
+				System.out.println("A média de temperatura em Londres nessa epoca do ano é de 3ºC à 17ºC");
+			} else if (periodo1 == 3) {
+				System.out.println("A média de temperatura em Londres nessa epoca do ano é de 11ºC à 22ºC");
+			} else if (periodo1 == 4) {
+				System.out.println("A média de temperatura em Londres nessa epoca do ano é de 4ºC à 19ºC");
+			} else {
+				System.out.println("Opção inválida!");
+			}
+
+		// Paris
+		else if (cidade == 2) {
+			if (periodo1 == 1) {
+				System.out.println("A média de temperatura em Paris nessa epoca do ano é de 3ºC à 9ºC");
+			} else if (periodo1 == 2) {
+				System.out.println("A média de temperatura em Paris nessa epoca do ano é de 6ºC à 22ºC");
+			} else if (periodo1 == 3) {
+				System.out.println("A média de temperatura em Paris nessa epoca do ano é de 14ºC à 26ºC");
+			} else if (periodo1 == 4) {
+				System.out.println("A média de temperatura em Paris nessa epoca do ano é de 5ºC à 20ºC");
+			} else {
+				System.out.println("Opção inválida!");
+			}
+
+		}
+
+		// Los Angeles
+		else if (cidade == 3) {
+			if (periodo1 == 1) {
+				System.out.println("A média de temperatura em Los Angeles nessa epoca do ano é de 3ºC à 9ºC");
+			} else if (periodo1 == 2) {
+				System.out.println("A média de temperatura em Los Angeles nessa epoca do ano é de 5ºC à 20ºC");
+			} else if (periodo1 == 3) {
+				System.out.println("A média de temperatura em Los Angeles nessa epoca do ano é de 14ºC à 26ºC");
+			} else if (periodo1 == 4) {
+				System.out.println("A média de temperatura em Los Angeles nessa epoca do ano é de 6ºC à 22ºC");
+			} else {
+				System.out.println("Opção inválida!");
+			}
+		}
+
+		// Buenos Aires
+		else if (cidade == 4) {
+			if (periodo1 == 1) {
+				System.out.println("A média de temperatura em Buenos Aires nessa epoca do ano é de 19ºC à 29ºC");
+			} else if (periodo1 == 2) {
+				System.out.println("A média de temperatura em Buenos Aires nessa epoca do ano é de 12ºC à 26ºC");
+			} else if (periodo1 == 3) {
+				System.out.println("A média de temperatura em Buenos Aires nessa epoca do ano é de 8ºC à 17ºC");
+			} else if (periodo1 == 4) {
+				System.out.println("A média de temperatura em Buenos Aires nessa epoca do ano é de 11ºC à 25ºC");
+			} else {
+				System.out.println("Opção inválida!");
+			}
+		}
+
+		// Dubai
+		else if (cidade == 5) {
+			if (periodo1 == 1) {
+				System.out.println("A média de temperatura em Dubai nessa epoca do ano é de 18ºC à 38ºC");
+			} else if (periodo1 == 2) {
+				System.out.println("A média de temperatura em Dubai nessa epoca do ano é de 18ºC à 38ºC");
+			} else if (periodo1 == 3) {
+				System.out.println("A média de temperatura em Dubai nessa epoca do ano é de 28ºC à 41ºC");
+			} else if (periodo1 == 4) {
+				System.out.println("A média de temperatura em Dubai nessa epoca do ano é de 4ºC à 19ºC");
+			} else {
+				System.out.println("Opção inválida!");
+			}
+		} else {
+			System.out.println("ERRO");
+		}
+	}
+
+	@Override
+
+	public void imprimirPontosTur() {
+
+		// Londres
+		if (cidade == 1) {
+			System.out.println("Londres tem três principais pontos turísticos, sendo eles: "
+					+ "Palácio de Westminster – Big Ben, London Eye, Torre de Londres e mais 39 destinos.");
+			opcoesMenu();
+		} else if (cidade == 2) {
+			System.out.println("Paris tem três principais pontos turísticos, sendo eles: Torre Eiffel, "
+					+ "Arco do Triunfo, Notre Dame de Paris e mais 15 destinos");
+			opcoesMenu();
+
+		}
+
+		// Los Angeles
+		else if (cidade == 3) {
+			System.out.println("Los Angeles tem três principais pontos turísticos, sendo eles: Hollywood, "
+					+ "Warner Bros Studios, Rodeo Drive e mais 12 destinos.");
+			opcoesMenu();
+		}
+
+		// Buenos Aires
+		else if (cidade == 4) {
+			System.out.println("Buenos Aires tem três principais pontos turísticos, sendo eles: Galerias Pacífico, "
+					+ "Casa Rosada, Obelisco  e mais 15 destinos.");
+			opcoesMenu();
+		}
+
+		// Dubai
+		else if (cidade == 5) {
+			System.out.println("Dubai tem três principais pontos turísticos, sendo eles: Abu Dhabi, Dubai Mall, "
+					+ "Ilhas artificiais  e mais 10 destinos.");
+			opcoesMenu();
+		} else {
+			System.out.println("ERRO");
+		}
+	}
+
+	public void imprimirFuso() {
+		// Londres
+		if (cidade == 1) {
+			int f = 3;
+			GregorianCalendar gc = new GregorianCalendar();
+			gc.setTime(new Date());
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+			gc.add(Calendar.HOUR, f);
+			System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+			// Paris
+		} else if (cidade == 2) {
+			int f = 4;
+			GregorianCalendar gc = new GregorianCalendar();
+			gc.setTime(new Date());
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+			gc.add(Calendar.HOUR, f);
+			System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+			// Los Angeles
+		} else if (cidade == 3) {
+			int f = -5;
+			GregorianCalendar gc = new GregorianCalendar();
+			gc.setTime(new Date());
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+			gc.add(Calendar.HOUR, f);
+			System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+			// Buenos Aires
+		} else if (cidade == 4) {
+			int f = 0;
+			GregorianCalendar gc = new GregorianCalendar();
+			gc.setTime(new Date());
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+			gc.add(Calendar.HOUR, f);
+			System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+			// Dubai
+		} else if (cidade == 5) {
+			int f = 7;
+			GregorianCalendar gc = new GregorianCalendar();
+			gc.setTime(new Date());
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+			gc.add(Calendar.HOUR, f);
+			System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+		} else {
+			System.out.println("ERRO");
+		}
+
+	}
+	
+	@Override
+	public void imprimirCustos() {
+		System.out.println("Quantos dias você pretende ficar nesse destino? ");
+		int qntsDias = leia.nextInt();
+
+		if (cidade == 1) {
+			double libra = 7.14;
+			double alimentacao = 25;
+			double bilhete = 1.5;
+			double aluguel = 32;
+			double hospedagem = 150;
+			double passagem = 7830;
+			double total;
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total = (((( alimentacao + bilhete + aluguel + hospedagem) * libra) * qntsDias) + passagem));
+
+			System.out.println("Londres - Libra = GBP");
+			System.out.println(
+					"Custo médio de alimentação diário: GBP " + alimentacao + " - " +  nf.format(alimentacao * libra));
+			System.out.println("Custo do bilhete para transporte: GBP " + bilhete + " - " + nf.format(bilhete * libra));
+			System.out.println(
+					"Custo de aluguel de carro diário a partir de: GBP " + aluguel + " - " + nf.format(aluguel * libra));
+			System.out.println(
+					"A hospedagem diária tem o custo inicial de: GBP " + hospedagem + " - " + nf.format(hospedagem * libra));
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else if (cidade == 2) {
+			double euro = 5.94;
+			double alimentacao = 78;
+			double bilhete = 1.7;
+			double aluguel = 45;
+			double hospedagem = 60;
+			double passagem = 5622;
+			double total;
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total = (((( alimentacao + bilhete + aluguel + hospedagem) * euro) * qntsDias) + passagem));
+
+			System.out.println("Paris - Euro = EUR ");
+			System.out.println(
+					"Custo médio de alimentação diário: EUR " + alimentacao + " - BRL " + nf.format(alimentacao * euro));
+			System.out.println("Custo do bilhete para transporte: EUR " + bilhete + " - BRL " + nf.format(bilhete * euro));
+			System.out.println(
+					"Custo de aluguel de carro diário a partir de: EUR " + aluguel + " - BRL " + nf.format(aluguel * euro));
+			System.out.println(
+					"A hospedagem diária tem o custo inicial de: EUR " + hospedagem + " - BRL " + nf.format(hospedagem * euro));
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.println("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: BRL " + nf.format(total));
+
+		} else if (cidade == 3) {
+			double dolar = 5.27;
+			double alimentacao = 56;
+			double bilhete = 1.75;
+			double aluguel = 38;
+			double hospedagem = 83;
+			double passagem = 6332;
+			double total;
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total = (((( alimentacao + bilhete + aluguel + hospedagem) * dolar) * qntsDias) + passagem));
+
+			System.out.println("Los Angeles - Dólar = USD");
+			System.out.println(
+					"Custo médio de alimentação diário: USD " + alimentacao + " - BRL " + nf.format(alimentacao * dolar));
+			System.out.println("Custo do bilhete para transporte: USD " + bilhete + " - BRL " + nf.format(bilhete * dolar));
+			System.out.println(
+					"Custo de aluguel de carro diário a partir de: USD " + aluguel + " - BRL " + nf.format(aluguel * dolar));
+			System.out.println(
+					"A hospedagem diária tem o custo inicial de: USD " + hospedagem + " - BRL " + nf.format(hospedagem * dolar));
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.println("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: BRL " + nf.format(total));
+
+		} else if (cidade == 4) {
+			double peso = 0.05;
+			double alimentacao = 250;
+			double bilhete = 6.00;
+			double aluguel = 1834;
+			double hospedagem = 3932;
+			double passagem = 6332;
+			double total;
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total = (((( alimentacao + bilhete + aluguel + hospedagem) * peso) * qntsDias) + passagem));
+
+			System.out.println("Buenos Aires - Pesos = ARS");
+			System.out.println(
+					"Custo médio de alimentação diário: ARS " + alimentacao + " - BRL " + nf.format(alimentacao * peso));
+			System.out.println("Custo do bilhete para transporte: ARS " + bilhete + " - BRL " + nf.format(bilhete * peso));
+			System.out.println(
+					"Custo de aluguel de carro diário a partir de: ARS " + aluguel + " - BRL " + nf.format(aluguel * peso));
+			System.out.println(
+					"A hospedagem diária tem o custo inicial de: ARS " + hospedagem + " - BRL " + nf.format(hospedagem * peso));
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.println("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: BRL " + nf.format(total));
+
+		} else if (cidade == 5) {
+			double dirham = 1.43;
+			double alimentacao = 250;
+			double bilhete = 6.00;
+			double aluguel = 1834;
+			double hospedagem = 3932;
+			double passagem = 6332;
+			double total;
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total = (((( alimentacao + bilhete + aluguel + hospedagem) * dirham) * qntsDias) + passagem));
+
+			System.out.println("Dubai - Dirham = DH");
+			System.out.println(
+					"Custo médio de alimentação diário: DH " + alimentacao + " - BRL " + nf.format(alimentacao * dirham));
+			System.out.println("Custo do bilhete para transporte: DH " + bilhete + " - BRL " + nf.format(bilhete * dirham));
+			System.out.println(
+					"Custo de aluguel de carro diário a partir de: DH " + aluguel + " - BRL " + nf.format(aluguel * dirham));
+			System.out.println(
+					"A hospedagem diária tem o custo inicial de: DH " + hospedagem + " - BRL " + nf.format(hospedagem * dirham));
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.println("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: BRL " + nf.format(total));
+
+		} else if (cidade > 5) {
+			System.out.println("O número digitado não corresponde as nossas opções. Por favor digite um valor válido");
+			escolhaCidade();
+		}
+		else
+		{
+			System.out.println("O número digitado ");
+		}
+
+	}
+	
+	@Override
+	public double opcoesMenu() {
+
+		int op = 0;
+		Scanner leia = new Scanner(System.in);
+
+		System.out.println("Opção [1]: Temperatura");
+		System.out.println("Opção [2]: Fuso Horário");
+		System.out.println("Opção [3]: Custos");
+		System.out.println("Opção [4]: Pontos turísticos");
+		System.out.println("Opção [5]: Todas as opções");
+		System.out.println("Opção [6]: Finalizar aplicação");
+		op = leia.nextInt();
+
+		switch (op) {
+		case 1:
+			imprimirClima();
+			break;
+		case 2:
+			imprimirFuso();
+			break;
+		case 3:
+			imprimirCustos();
+			break;
+		case 4:
+			imprimirPontosTur();
+			break;
+		case 5:
+			imprimirClima();
+			imprimirFuso();
+			imprimirCustos();
+			imprimirPontosTur();
+			break;
+		case 6:
+			System.out.println("\nObrigado por utilizar o nosso sistema!!");
+			System.out.println("\nAplicação finalizada");
+			System.exit(0);
+			break;
+		default: imprimirClima();
+		}
+		return op;
+	}
+	
+	@Override
+	public void escolhaCidade() {
+		System.out.println("Opção [1]: Londres");
+		System.out.println("Opção [2]: Paris");
+		System.out.println("Opção [3]: Los Angeles");
+		System.out.println("Opção [4]: Buenos Aires");
+		System.out.println("Opção [5]: Dubai");
+		cidade = leia.nextInt();
+
+		switch (cidade) {
+		case 1:
+			opcoesMenu();
+
+			break;
+		case 2:
+			opcoesMenu();
+
+			break;
+		case 3:
+			opcoesMenu();
+
+			break;
+		case 4:
+			opcoesMenu();
+
+			break;
+		case 5:
+			opcoesMenu();
+			break;
+			
+		default: opcoesMenu();
+			
+		}
+
+	}
+
+}

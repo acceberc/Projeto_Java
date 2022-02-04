@@ -1,0 +1,242 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.CidadesInternacionais;
+import entities.CidadesNacionais;
+import entities.Destinos;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int x;
+		int op;
+		int op2;
+		String nome;
+
+		Scanner sc = new Scanner(System.in);
+
+		CidadesInternacionais[] city = new CidadesInternacionais[5];
+		/*
+		 * nome, moeda, pontosTuristicos, fuso, temperaturaMin, temperaturaMax, periodo,
+		 * cambio, bilhete, alimentacao, hospedagem, aluguel, passagem
+		 */
+		city[0] = new CidadesInternacionais("Londres", "libra",
+				"Londres tem três principais pontos turísticos, sendo eles: "
+						+ "Palácio de Westminster – Big Ben, London Eye, Torre de Londres e mais 39 destinos.",
+				3, 0, 0, 0, 7.14f, 1.5f, 25, 150, 32, 7830);
+		city[1] = new CidadesInternacionais("Paris", "euro",
+				"Paris tem três principais pontos turísticos, sendo eles: Torre Eiffel, "
+						+ "Arco do Triunfo, Notre Dame de Paris e mais 15 destinos",
+				4, 0, 0, 0, 5.94f, 1.7f, 78, 60, 45, 5622);
+		city[2] = new CidadesInternacionais("Los Angeles", "dólar",
+				"Los Angeles tem três principais pontos turísticos, sendo eles:"
+						+ "Hollywood, Warner Bros Studios, Rodeo Drive e mais 12 destinos.",
+				-5, 0, 0, 0, 5.27f, 1.75f, 56, 83, 38, 6332);
+		city[3] = new CidadesInternacionais("Buenos Aires", "peso argentino",
+				"Buenos Aires tem três principais pontos turísticos, sendo eles:"
+						+ " Galerias Pacífico, Casa Rosada, Obelisco  e mais 15 destinos.",
+				4, 0, 0, 0, 0.05f, 6.00f, 250, 3932, 1834, 6332);
+		city[4] = new CidadesInternacionais("Dubai", "dihram",
+				"Dubai tem três principais pontos turísticos, sendo eles:"
+						+ " Abu Dhabi, Dubai Mall, Ilhas artificiais  e mais 10 destinos.",
+				7, 0, 0, 0, 1.43f, 6.00f, 250, 3932, 1834, 6332);
+		CidadesNacionais[] cidade = new CidadesNacionais[5];
+
+		// nome, pontosTuristicos, (fuso), bilhete, alimentacao, hospedagem, aluguel,
+		// passagem
+		cidade[0] = new CidadesNacionais("São Paulo",
+				"São Paulo tem três principais pontos turísticos,"
+						+ " sendo eles: Edifício Itália, Parque do Ibirapuera, MASP e mais 35 destinos.",
+				4.40f, 55.83f, 90, 99, 0);
+		cidade[1] = new CidadesNacionais("Fortaleza",
+				"Fortaleza tem três principais pontos turísticos, sendo eles:"
+						+ " Mercado Central de Fortaleza, Praia do Futuro, Av. Beira Mar e mais 20 destinos.",
+				3.90f, 76, 290, 122.17f, 0);
+		cidade[2] = new CidadesNacionais("Manaus",
+				"Manaus tem três principais pontos turísticos, sendo eles: Centro histórico,"
+						+ " Encontro das águas, Praia da Ponta Negra e mais 11 destinos.",
+				-1, 3.80f, 60, 120, 139, 0);
+		cidade[3] = new CidadesNacionais("Rio de Janeiro",
+				"Rio de Janeiro tem três principais pontos turísticos, sendo eles:"
+						+ " Cristo Redentor, Pão de açúcar, Copacabana e mais 36 destinos.",
+				5.80f, 95, 150, 130, 0);
+		cidade[4] = new CidadesNacionais("Porto Alegre",
+				"Porto Alegre tem três principais pontos turísticos, sendo eles:"
+						+ " Parque Farroupilha, Cidade Baixa, Rio Guaíba e mais 21 destinos.",
+				8.37f, 73, 110, 99, 0);
+
+		Destinos destino[] = null;
+
+		System.out.println("* * * * * * * * * * * * * * * *");
+		System.out.println("* * * * * 44 TURISMO! * * * * *");
+		System.out.println("* * * * * * * * * * * * * * * *");
+		System.out.println("Olá, seja bem-vinde!");
+		System.out.println("Qual é o seu nome?");
+		nome = sc.next();
+
+		do {
+			System.out.println("\nOlá, " + nome + ", para prosseguirmos, selecione o destino desejado:");
+			System.out.println("\n[1]: Internacional");
+			System.out.println("[2]: Nacional");
+			System.out.println("[0]: Finalizar aplicação");
+			op = sc.nextInt();
+
+			switch (op) {
+
+			case 0:
+				System.out.println("\nObrigado por utilizar o nosso sistema!!");
+				System.out.println("\nAplicação finalizada");
+				System.exit(0);
+				break;
+
+			case 1:
+				destino = city;
+				break;
+
+			case 2:
+				destino = cidade;
+				break;
+
+			default:
+				System.out.println("Opção Inválida");
+
+			}
+		} while (op < 0 || op > 2);
+
+		do {
+			System.out.println("[1]: " + destino[0].getNome());
+			System.out.println("[2]: " + destino[1].getNome());
+			System.out.println("[3]: " + destino[2].getNome());
+			System.out.println("[4]: " + destino[3].getNome());
+			System.out.println("[5]: " + destino[4].getNome());
+			System.out.println("[0]: Finalizar aplicação");
+			x = (sc.nextInt()) - 1;
+
+			switch ((x + 1)) {
+
+			case 0:
+				System.out.println("\nObrigado por utilizar o nosso sistema!!");
+				System.out.println("\nAplicação finalizada");
+				System.exit(0);
+				break;
+
+			default:
+				if (x < 0 || x > 4) {
+					System.out.println("Opção Inválida");
+				}
+			}
+
+		} while (x < 0 || x > 4);
+
+		if (destino == city) {
+			System.out.println("[1]: Temperatura");
+		}
+		if (destino == city || destino[x].getNome() == "Manaus") {
+			System.out.println("[2]: Fuso Horário");
+		}
+		System.out.println("[3]: Custos");
+		System.out.println("[4]: Pontos turísticos");
+		System.out.println("[5]: Todas as opções");
+		System.out.println("[6]: Voltar ao início");
+		System.out.println("[0]: Finalizar aplicação");
+		op2 = sc.nextInt();
+
+		if (destino == city) {
+			switch (op2) {
+
+			case 0:
+				System.out.println("\nObrigado por utilizar o nosso sistema!!");
+				System.out.println("\nAplicação finalizada");
+				System.exit(0);
+				break;
+
+			case 1:
+				System.out.println("\nSelecione o período desejado");
+				System.out.println("\n[1] – Janeiro a Março");
+				System.out.println("[2] – Abril a Junho");
+				System.out.println("[3] – Julho a Setembro");
+				System.out.println("[4] – Outubro a Novembro");
+				op = sc.nextInt();
+
+				destino[x].setPeriodo(op);
+				destino[x].imprimirClima();
+				break;
+
+			case 2:
+				destino[x].imprimirFuso();
+				break;
+
+			case 3:
+				destino[x].imprimirCustos();
+				break;
+
+			case 4:
+				destino[x].pontosTuristicos();
+				break;
+
+			case 5:
+				destino[x].setPeriodo(op);
+				destino[x].imprimirClima();
+				destino[x].imprimirFuso();
+				destino[x].imprimirCustos();
+				destino[x].pontosTuristicos();
+				break;
+
+			case 6:
+				main(args);
+				break;
+
+			default:
+				System.out.println("Opção Inválida");
+			}
+
+			if (destino == cidade) {
+				switch (op2) {
+
+				case 0:
+					System.out.println("\nObrigado por utilizar o nosso sistema!!");
+					System.out.println("\nAplicação finalizada");
+					System.exit(0);
+					break;
+
+				case 2:
+					if(destino[x].getNome() == "Manaus") {
+					destino[x].imprimirFuso();
+					
+					} else {
+						System.out.println("Opção inválida");
+					}
+					break;
+
+				case 3:
+					destino[x].imprimirCustos();
+					break;
+
+				case 4:
+					destino[x].pontosTuristicos();
+					break;
+
+				case 5:
+					if(destino[x].getNome() == "Manaus") {
+						destino[x].imprimirFuso();	
+						}
+						destino[x].imprimirCustos();
+						destino[x].pontosTuristicos();	
+					break;
+
+				case 6:
+					main(args);
+					break;
+
+				default:
+					System.out.println("Opção Inválida");
+				}
+
+			}
+
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package entities;
+
+public interface InterfaceInternacional {
+	
+	public String nomeInterface = "DestinoInternacional";
+	
+	abstract public void cambio (float cambio);
+	abstract public void imprimirFuso(int fuso);
+	abstract public void imprimirClima(int clima);
+
+}

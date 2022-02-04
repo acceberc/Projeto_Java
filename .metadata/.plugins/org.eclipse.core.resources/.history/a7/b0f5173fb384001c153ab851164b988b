@@ -1,0 +1,146 @@
+package entities;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class CidadesInternacionais extends Destinos {
+
+	public CidadesInternacionais(String nome, String estacao, String moeda, String pontosTuristicos, int fuso,
+			int periodo, int temperaturaMin, int temperaturaMax, float cambio, float custos, float alimentacao,
+			float hospedagem, boolean visto) {
+
+		super(nome, estacao, moeda, pontosTuristicos, fuso, temperaturaMin, temperaturaMax, periodo, cambio, custos,
+				alimentacao, hospedagem, visto);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void cambio(float cambio) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void imprimirFuso(int fuso) {
+		// TODO Auto-generated method stub
+		if (fuso < 0) {
+			System.out.println("Diferença fuso horária -" + fuso + ":00");
+		} else {
+			System.out.println("Diferença fuso horária " + fuso + ":00");
+		}
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTime(new Date());
+
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		System.out.println("Horário local: " + sdf.format(gc.getTime()));
+
+		gc.add(Calendar.HOUR, fuso);
+		System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
+	}
+
+	public void imprimirClima(int clima) {
+		// TODO Auto-generated method stub
+		
+		if (periodo == 1 && nome == "Londres") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+		
+		} else if (periodo == 1 && nome == "Paris") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+		
+		} else if (periodo == 1 && nome == "Los Angeles") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+		
+		} else if (periodo == 1 && nome == "Buenos Aires") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+		
+		} else if (periodo == 1 && nome == "Dubai") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+		
+		} else if (periodo == 1 && nome == "Londres") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+			
+		} else if (periodo == 1 && nome == "Paris") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+			
+		} else if (periodo == 1 && nome == "Los Angeles") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+			
+		} else if (periodo == 1 && nome == "Buenos Aires") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+			
+		} else if (periodo == 1 && nome == "Dubai") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+			
+		} else if (periodo == 1 && nome == "Londres") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+				
+		} else if (periodo == 1 && nome == "Paris") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+				
+		} else if (periodo == 1 && nome == "Los Angeles") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+				
+		} else if (periodo == 1 && nome == "Buenos Aires") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+				
+		} else if (periodo == 1 && nome == "Dubai") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+				
+		} else if (periodo == 1 && nome == "Londres") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+					
+		} else if (periodo == 1 && nome == "Paris") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+					
+		} else if (periodo == 1 && nome == "Los Angeles") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+					
+		}  else if (periodo == 1 && nome == "Buenos Aires") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+					
+		}  else if (periodo == 1 && nome == "Dubai") {
+			setTemperaturaMin(2);
+			setTemperaturaMax(8);
+						
+		} else {
+			System.out.println("Opção inválida!");
+}
+
+	@Override
+	protected void geNome(String nome) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void imprimirCustos(float custos) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void pontosTuristicos(String pontosTuristicos) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

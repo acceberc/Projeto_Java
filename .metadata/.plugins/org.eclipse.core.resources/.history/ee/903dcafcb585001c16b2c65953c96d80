@@ -1,0 +1,90 @@
+package Familia44;
+
+public class Exception {
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+
+			String frase = null;
+			String novaFrase = null;
+			
+			try // faz uma tentativa de execução para verificar o erro
+			{
+				novaFrase = frase.toUpperCase();//tenta colocar uma String para maiuscula
+			}
+			catch(NullPointerException e)//ela faz a correção de um valor null para um conteúdo qualquer
+			{
+				//tratamento da exceção
+				System.out.println("\nA frase inicial está nula, para selecionar tal problema, "
+						+ "foi lhe atribuído um valor default...");
+				frase = "Frase vazia";
+				novaFrase = frase.toUpperCase();
+			}
+			System.out.println("\nFrase antiga: "+frase);
+			System.out.println("\nFrase nova: "+novaFrase);
+		}
+
+	}
+
+
+
+	package Familia44;
+
+	import java.util.InputMismatchException;
+	import java.util.Scanner;
+
+	public class Excecao2 {
+		
+		public static int quociente(int numerador, int denominador) throws ArithmeticException
+		{
+			return numerador / denominador;
+		}
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+
+			//demonstrar o lançamento de uma exceção quando ocorre uma divisão por zero
+			// e também quando meu usuário insere um tipo de dado diferente do esperado
+			Scanner leia = new Scanner(System.in);
+			
+			boolean continueLoop = true;//determina se mais entradas são necessárias
+			
+			do
+			{
+				try // ler dois números e calcular o quociente
+				{
+					System.out.println("\nEntre com o numerador: ");
+					int numerador = leia.nextInt();
+					System.out.println("\nEntre com o denominador: ");
+					int denominador = leia.nextInt();
+					
+					int resultado = quociente(numerador,denominador);
+					System.out.printf("\nResultado: %d  /  %d = %d",numerador,denominador,resultado);
+					continueLoop = false;
+				}
+				
+				catch(InputMismatchException inputMismatchException)//exceção de entrada de dados de tipos diferentes
+				{
+					System.err.printf("\nException: %s\n",inputMismatchException);
+					leia.nextLine();
+					System.out.println("\nVocê deve entrar com um valor do tipo inteiro.\nPor favor tente novamente...");
+					
+				}
+				
+				catch(ArithmeticException arithmeticException)
+				{
+					System.err.printf("\nException: %s \n",arithmeticException);
+					System.out.println("\nZero é um denominador inválido.\nPor favor, tente novamente...");
+					
+				}
+			}
+			while(continueLoop);
+			
+		}
+
+	}
+
+
+	
+
+}

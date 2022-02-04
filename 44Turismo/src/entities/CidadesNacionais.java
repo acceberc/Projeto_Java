@@ -27,24 +27,6 @@ public class CidadesNacionais extends Destinos {
 	}
 
 	@Override
-	public void imprimirFuso() {
-		// TODO Auto-generated method stub
-		if (fuso < 0) {
-			System.out.println("Diferença fuso horária " + fuso + ":00");
-		} else {
-			System.out.println("Diferença fuso horária +" + fuso + ":00");
-		}
-		GregorianCalendar gc = new GregorianCalendar();
-		gc.setTime(new Date());
-
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-		System.out.println("Horário local: " + sdf.format(gc.getTime()));
-
-		gc.add(Calendar.HOUR, fuso);
-		System.out.println("Horário no destino: " + sdf.format(gc.getTime()));
-	}
-
-	@Override
 	public void geNome() {
 		// TODO Auto-generated method stub
 
@@ -81,7 +63,6 @@ public class CidadesNacionais extends Destinos {
 	@Override
 	public void imprimirClima() {
 		// TODO Auto-generated method stub
-
 	}
 
 }

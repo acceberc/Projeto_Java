@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Nacional {
+	Scanner leia = new Scanner(System.in);
+	private String fuso;
+
+	public Nacional(String fuso) {
+		this.fuso = fuso;
+	}
+
+	public String getFuso() {
+		return fuso;
+	}
+
+	public void setFuso(String fuso) {
+		this.fuso = fuso;
+	}
+
+	public void opcoesMenuN() {
+		int op1 = 0;
+		Scanner leia = new Scanner(System.in);
+		System.out.println("Opção [1]: Custos");
+		System.out.println("Opção [2]: Pontos turísticos");
+		System.out.println("Opção [3]: Fuso horário");
+		System.out.println("Opção [4]: Todas as opções");
+		op1 = leia.nextInt();
+		switch (op1) {
+		case 1:
+			System.out.println("xx");
+			break;
+		case 2:
+			System.out.println("xx");
+			break;
+		case 3:
+			System.out.println("xx");
+			break;
+		case 4:
+			System.out.println("xx");
+			break;
+
+		}
+	}
+}
+

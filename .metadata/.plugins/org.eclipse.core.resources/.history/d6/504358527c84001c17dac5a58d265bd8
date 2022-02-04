@@ -1,0 +1,238 @@
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class CidadeN extends Destinos {
+	Scanner leia = new Scanner(System.in);
+	
+
+	public CidadeN(int opCidade, int cidade) {
+		super(opCidade, cidade);
+	}
+
+	public int getCidadeN() {
+		return cidade;
+	}
+
+	public void setCidadeN(int cidadeN) {
+		this.cidade = cidadeN;
+	}
+	
+	@Override
+	public void escolhaCidade() {
+		
+		System.out.println("Opção [1]: São Paulo");
+		System.out.println("Opção [2]: Fortaleza");
+		System.out.println("Opção [3]: Manaus");
+		System.out.println("Opção [4]: Rio de Janeiro");
+		System.out.println("Opção [5]: Porto Alegre");
+		System.out.println("Opção [0]: Sair");
+		cidade = leia.nextInt();
+
+		switch (cidade) {
+		
+		case 1:
+			opcoesMenu();
+
+			break;
+		case 2:
+			opcoesMenu();
+
+			break;
+		case 3:
+			opcoesMenu();
+
+			break;
+		case 4:
+			opcoesMenu();
+
+			break;
+		case 5:
+			opcoesMenu();
+
+			break;
+			
+		default:
+			if (cidade != 0) {
+			System.out.println("Opção inválida");
+			}
+			
+		}
+	}
+	
+	@Override
+	public void imprimirPontosTur() {
+		// São Paulo
+		if (cidade == 1) {
+			System.out.println(
+					"São Paulo tem três principais pontos turísticos, sendo eles: Edifício Itália, Parque do Ibirapuera, MASP e mais 35 destinos.");
+			opcoesMenu();
+
+			// Fortaleza
+		} else if (cidade == 2) {
+			System.out.println(
+					"Fortaleza tem três principais pontos turísticos, sendo eles: Mercado Central de Fortaleza, Praia do Futuro, Av. Beira Mar e mais 20 destinos.");
+			opcoesMenu();
+		}
+
+		// Manaus
+		else if (cidade == 3) {
+			System.out.println(
+					"Manaus tem três principais pontos turísticos, sendo eles: Centro histórico, Encontro das águas, Praia da Ponta Negra e mais 11 destinos.");
+			opcoesMenu();
+		}
+
+		// Rio de Janeiro
+		else if (cidade == 4) {
+			System.out.println(
+					"Rio de Janeiro tem três principais pontos turísticos, sendo eles: Cristo Redentor, Pão de açúcar, Copacabana e mais 36 destinos.");
+			opcoesMenu();
+		}
+
+		// Porto Alegre
+		else if (cidade == 5) {
+			System.out.println(
+					"Porto Alegre tem três principais pontos turísticos, sendo eles: Parque Farroupilha, Cidade Baixa, Rio Guaíba e mais 21 destinos.");
+			opcoesMenu();
+		} else {
+			System.out.println("ERRO");
+		}
+	}
+	
+	@Override
+	public void imprimirCustos() {
+		System.out.println("Quantos dias você pretende ficar nesse destino? ");
+		int qntsDias = leia.nextInt();
+
+		if (cidade == 1) {
+			double alimentacao = 55.83;
+			double bilhete = 4.40;
+			double aluguel = 99;
+			double hospedagem = 90;
+			double passagem = 0;
+			double total = (((alimentacao + bilhete + aluguel + hospedagem) * qntsDias) + passagem);
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total);
+
+			System.out.println("São Paulo");
+			System.out.println("Custo médio de alimentação diário: BRL " + alimentacao);
+			System.out.println("Custo do bilhete para transporte: BRL " + bilhete);
+			System.out.println("Custo de aluguel de carro diário a partir de: BRL " + aluguel);
+			System.out.println("A hospedagem diária tem o custo inicial de: BRL " + hospedagem);
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else if (cidade == 2) {
+			double alimentacao = 76;
+			double bilhete = 3.90;
+			double aluguel = 122.17;
+			double hospedagem = 290;
+			double passagem = 0;
+			double total = (((alimentacao + bilhete + aluguel + hospedagem) * qntsDias) + passagem);
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total);
+
+			System.out.println("Fortaleza");
+			System.out.println("Custo médio de alimentação diário: BRL " + alimentacao);
+			System.out.println("Custo do bilhete para transporte: BRL " + bilhete);
+			System.out.println("Custo de aluguel de carro diário a partir de: BRL " + aluguel);
+			System.out.println("A hospedagem diária tem o custo inicial de: BRL " + hospedagem);
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else if (cidade == 3) {
+			double alimentacao = 60;
+			double bilhete = 3.80;
+			double aluguel = 139;
+			double hospedagem = 120;
+			double passagem = 0;
+			double total = (((alimentacao + bilhete + aluguel + hospedagem) * qntsDias) + passagem);
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total);
+
+			System.out.println("Manaus");
+			System.out.println("Custo médio de alimentação diário: BRL " + alimentacao);
+			System.out.println("Custo do bilhete para transporte: BRL " + bilhete);
+			System.out.println("Custo de aluguel de carro diário a partir de: BRL " + aluguel);
+			System.out.println("A hospedagem diária tem o custo inicial de: BRL " + hospedagem);
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else if (cidade == 4) {
+			double alimentacao = 95;
+			double bilhete = 5.80;
+			double aluguel = 130;
+			double hospedagem = 150;
+			double passagem = 0;
+			double total = (((alimentacao + bilhete + aluguel + hospedagem) * qntsDias) + passagem);
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total);
+
+			System.out.println("Rio de Janeiro");
+			System.out.println("Custo médio de alimentação diário: BRL " + alimentacao);
+			System.out.println("Custo do bilhete para transporte: BRL " + bilhete);
+			System.out.println("Custo de aluguel de carro diário a partir de: BRL " + aluguel);
+			System.out.println("A hospedagem diária tem o custo inicial de: BRL " + hospedagem);
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else if (cidade == 5) {
+			double alimentacao = 73;
+			double bilhete = 8.37;
+			double aluguel = 99;
+			double hospedagem = 110;
+			double passagem = 0;
+			double total = (((alimentacao + bilhete + aluguel + hospedagem) * qntsDias) + passagem);
+
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			nf.setMinimumFractionDigits(2);
+			String formatoMoeda = nf.format(total);
+
+			System.out.println("Porto Alegre");
+			System.out.println("Custo médio de alimentação diário: BRL " + alimentacao);
+			System.out.println("Custo do bilhete para transporte: BRL " + bilhete);
+			System.out.println("Custo de aluguel de carro diário a partir de: BRL " + aluguel);
+			System.out.println("A hospedagem diária tem o custo inicial de: BRL " + hospedagem);
+			System.out.println("Valor de passagens a partir de: BRL " + passagem);
+			System.out.printf("\nCom base nas informações acima, o seu gasto médio na viagem durante " + qntsDias
+					+ " dias, será de: " + nf.format(total));
+
+		} else {
+			System.out.println("ERRO");
+		}
+
+	}
+	
+	@Override
+	public void opcoesMenu() {
+		Scanner leia = new Scanner(System.in);
+		System.out.println("Opção [1]: Custos");
+		System.out.println("Opção [2]: Pontos turísticos");
+		System.out.println("Opção [3]: Todas as opções");
+		opCidade = leia.nextInt();
+		switch (opCidade) {
+		case 1:
+			imprimirCustos();
+			break;
+		case 2:
+			imprimirPontosTur();
+			break;
+		case 3:
+			imprimirCustos();
+			imprimirPontosTur();
+			break;
+			
+		}
+	}
+}
